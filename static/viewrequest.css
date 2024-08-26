@@ -1,0 +1,22 @@
+.nav-item {
+    display: inline;
+    padding: 5px;
+}
+.details{
+    margin-top: 40px;
+    margin-left:30%;
+    border: 2px solid black;
+    padding: 50px;
+    width: 500px;
+    height: 500px;
+
+}
+p{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+.navbar {
+    background-color: burlywood;
+    height: 60px;
+}

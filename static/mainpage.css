@@ -1,0 +1,23 @@
+body{
+    background-image: url(librarybg.jpg);
+}
+.option{
+    color: black;
+    background-color: rgba(232, 163, 163, 0.5);
+    border:5px solid black;
+    text-align: center;
+    padding-top: 40px;
+    height:200px;
+    width:350px;
+    
+}
+.option a{
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+.jumbotron{
+    background-color: rgba(232, 163, 163, 0.5);
+    text-align: center;
+    padding-left: 50px;
+}

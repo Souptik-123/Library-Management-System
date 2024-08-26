@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User DashBoard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/books.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-sm nav-dark">
+          <ul class="navbar-nav">
+            <li>
+              <h2>{{user.username}} dashboard</h2>
+            </li>
+            <li class="nav-item" style="margin-left:500px;">
+              <a href="/mybooks/{{user.id}}"><button type="button" class="btn btn-outline-primary ">MyBooks</button></a>
+            </li>
+            <li class="nav-item">
+              <a href="/user/{{user.id}}"><button type="button" class="btn btn-outline-primary">Books</button></a>
+            </li>
+            <li class="nav-item">
+              <a href="/userstats/{{user.id}}"><button type="button" class="btn btn-outline-primary">stats</button></a>
+            </li>
+            <li class="nav-item">
+              <a href="/"><button type="button" class="btn btn-outline-danger ">Logout</button></a>
+            </li>
+          </ul>
+        </nav>
+        <br>
+        <h3>Current</h3>
+        <table class="table thicker-divider">
+            <tr>
+                <th>book Title</th>
+                <th>Author</th>
+                <th>Book Section</th>
+            </tr>
+            {% for gbook in gbooks%}
+            <tr>
+                <td>{{gbook.book.bname}}</td>
+                <td>{{gbook.book.author}}</td>
+                <td>{{gbook.book.book_s.sname}}</td>
+                <td><a href="/return/{{gbook.id}}" ><button type="submit" class="btn btn-success "  >return</button></a></td></tr>
+            </tr>
+            {% endfor %}
+        </table>
+        <h3>Completed</h3>
+        <table class="table thicker-divider" >
+            <tr>
+                <th>book Title</th>
+                <th>Author</th>
+                <th>Book Section</th>
+            </tr>
+            {% for cbook in cbooks%}
+            <tr>
+                <td>{{cbook.book.bname}}</td>
+                <td>{{cbook.book.author}}</td>
+                <td>{{cbook.book.book_s.sname}}</td>
+                <td><a href="/viewmybook/{{cbook.id}}"><button type="submit" class="btn btn-success " >view</button></a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    
+    </div>
+    
+</body>
+</html>

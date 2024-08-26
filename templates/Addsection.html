@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Section</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/addsection.css">
+</head>
+<body>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-expand-sm nav-dark">
+              <ul class="navbar-nav">
+                <li>
+                  <h2>Librarian's Dashboard</h2>
+                </li>
+                <li class="nav-item" style="margin-left:400px ;">
+                  <a href="/home"><button type="button" class="btn btn-outline-primary">Sections</button></a>
+                </li>
+                <li class="nav-item">
+                  <a href="/libstats"><button type="button" class="btn btn-outline-primary ">Stats</button></a>
+                </li>
+                <li class="nav-item">
+                  <a href="/request"><button type="button" class="btn btn-outline-primary">Requests</button></a>
+                </li>
+                <li class="nav-item">
+                  <a href="/"><button type="button" class="btn btn-outline-danger ">Logout</button></a>
+                </li>
+              </ul>
+            </nav>
+            <br>
+            <h4>Add new Section</h4>
+            <div id="form-body">
+                <form action="/addsection" method="POST">
+                    <div class="mb-3">
+                        <label class="label-form">Title</label>
+                        <input type="text" class="form-control" name="title" placeholder="Enter name of the section">
+                    </div>
+                    <div class="mb-3">
+                        <label class="label-form">Date Created</label>
+                        <input type="date" class="form-control" name="date">
+                    </div>
+                    <div class="mb-3">
+                        <label class="label-form">Image</label>
+                        <input type="text" class="form-control" name="img" placeholder="Enter image link">
+                    </div>
+                    <div class="mb-3">
+                        <label class="label-form">Description</label>
+                        <input type="text" class="form-control" name="desc" placeholder="Enter description">
+                    </div>
+                  <button type="submit" class=" btn btn-success " style="margin-left: 35%;">Add</button>
+                  <a href="/home"><button type="button" class="btn btn-danger mx-4">Cancel</button></a>
+                </form>
+          
+                
+            </div>
+          </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+#div-body{
+    text-align: center;
+    height: 70%;
+    width: 70%;
+    margin:auto;
+    border: 5px solid red;
+    padding: 50px;
+    margin-top: 200px; 
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color:rgba(255, 99, 71,0.5);
+}

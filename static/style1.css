@@ -1,0 +1,11 @@
+button{
+    text-decoration: solid;
+    color:black;
+}
+.nav-item{
+    padding:5px;
+}
+.navbar {
+    background-color: burlywood;
+    height: 60px;
+}

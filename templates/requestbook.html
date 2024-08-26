@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>View Book</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/books.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-sm nav-dark">
+            <ul class="navbar-nav">
+                <li>
+                    <h2>Request Book</h2>
+                </li>
+                <li class="nav-item" style="margin-left:500px;">
+                    <a href="/mybooks/{{user.id}}"><button type="button" class="btn btn-outline-primary ">MyBooks</button></a>
+                </li>
+                <li class="nav-item">
+                    <a href="/user/{{user.id}}"><button type="button" class="btn btn-outline-primary">Books</button></a>
+                </li>
+                <li class="nav-item">
+                    <a href="/userstats/{{user.id}}"><button type="button" class="btn btn-outline-primary">stats</button></a>
+                </li>
+                <li class="nav-item">
+                    <a href="/"><button type="button" class="btn btn-outline-danger ">Logout</button></a>
+                </li>
+            </ul>
+        </nav>
+        <br><br>
+        <div class="row">
+            <img src="{{book.imglink}}" alt="Book img" style="width:30%">
+            <div class="col-5 mx-4">
+                <h1>{{book.bname}}</h1>
+                <pre style="font-size: 20px;">              by {{book.author}}</pre>
+                <p style="font-size: 20px;"> Section: {{book.book_s.sname}}</p>
+                Contents:
+                <p style="font-size: 20px;">{{book.content}}</p>
+                <form action="/requestbook/{{user.id}}/{{book.bid}}" method="POST">
+                    <input type="number" class="form-control" placeholder="Enter number of days" name="nday">
+                    <br>
+                    <button type="submit" class="btn btn-success " style="margin-left: 100px;" >request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

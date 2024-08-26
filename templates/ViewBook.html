@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/books.css">
+    <title>View Book</title>
+</head>
+<body>
+    <div class="container">
+      <nav class="navbar navbar-expand-sm nav-dark">
+        <ul class="navbar-nav">
+          <li>
+            <h2>Librarian's Dashboard</h2>
+          </li>
+          <li class="nav-item" style="margin-left:400px ;">
+            <a href="/home"><button type="button" class="btn btn-outline-primary">Sections</button></a>
+          </li>
+          <li class="nav-item">
+            <a href="/libstats"><button type="button" class="btn btn-outline-primary ">Stats</button></a>
+          </li>
+          <li class="nav-item">
+            <a href="/request"><button type="button" class="btn btn-outline-primary">Requests</button></a>
+          </li>
+          <li class="nav-item">
+            <a href="/"><button type="button" class="btn btn-outline-danger ">Logout</button></a>
+          </li>
+        </ul>
+      </nav>
+      <br>
+        <h1>Books in {{sname}}</h1>
+        <br>
+        {% if books|length == 0 %}  
+        <h3>No books in this section</h3>
+        {% else %}
+        <div class="row">
+            {% for book in books %}
+            <div class="col-4">
+              <div class="card">
+                <img class="card-img-top" src="{{book.imglink}}" alt="Book image" style="margin-left:100px;width:150px;height:150px;">
+                <div class="card-body">
+                  <h5 class="card-title">{{book.bname}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{book.author}}</h6>
+                  {% for tuser in book.book_u %}
+                    {% if tuser.status == "Granted" %}
+                      <p class="card-text">User issued: {{tuser.user.username}}</p>
+                    {% endif %}  
+                  {% endfor %}
+                  <a href="/editbook/{{book.bid}}" class="card-link"><button class="btn btn-primary">Edit</button></a>
+                  <a href="/deletebook/{{book.bid}}" class="card-link" ><button class="btn btn-danger">Delete</button></a>
+                </div>
+              </div>
+              
+            </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+        </div> 
+    
+
+    
+</body>
+</html>

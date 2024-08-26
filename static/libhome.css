@@ -1,0 +1,22 @@
+.btn{
+    color: black;
+}
+#bttn {
+    border-radius: 50%;
+    margin: 10% 50%;
+
+}
+.nav-item {
+    display: inline;
+    padding: 5px;
+}
+.card{
+    width: 440px;
+}
+.thicker-divider td{
+    border-top: 2px solid black;
+}
+.navbar{
+    background-color: burlywood;
+    height: 60px;
+}

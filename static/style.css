@@ -1,0 +1,19 @@
+#canvas{
+    border:5px solid black;
+    height:600px;
+    width: 600px;
+    margin:auto;
+    margin-top:20px;
+}
+#form-body{
+    border:5px double rgb(144, 31, 31);
+    margin:auto;
+    margin-top:30px;
+    width:400px;
+    height:530px;
+    padding:20px;
+}
+.navbar {
+    background-color: burlywood;
+    height: 60px;
+}
